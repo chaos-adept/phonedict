@@ -1,0 +1,25 @@
+<div ng-mouseover="showEditCtrl=true" ng-mouseleave="showEditCtrl=false">
+    <div ng-if="!editMode">
+       <span ng-bind-html="data.name | highlight:highlightText:false"></span> / {{data.phoneNumber}}
+
+        <span ng-if="showEditCtrl" class="pull-right">
+            <button class="btn btn-xs" ng-click="toEditState()"> <span class="glyphicon glyphicon-pencil"></span></button>
+            <button class="btn btn-xs" ng-click="onRemove(data)"> <span class="glyphicon glyphicon-remove"></span></button>
+        </span>
+    </div>
+    <div ng-if="editMode">
+        <form>
+            <input ng-model="data.changingFields.name" auto-focus />
+            <input ng-model="data.changingFields.phoneNumber" />
+
+            <span>
+                <button ng-click="checkModificationAndUpdate()"
+                        type="submit" class="btn btn-xs btn-default">
+                    <span class="glyphicon glyphicon-plus"></span></button>
+                <button ng-click="cancelEdit()"
+                        class="btn btn-xs btn-default">
+                    <span class="glyphicon glyphicon-refresh"></span></button>
+            </span>
+        </form>
+    </div>
+</div>

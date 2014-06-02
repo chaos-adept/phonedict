@@ -1,0 +1,15 @@
+.contact-item-roll-over {
+    background-color: aliceblue;
+}
+
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+form input.ng-invalid.ng-dirty {
+    background-color: lightcoral;
+}
+
+form input.ng-valid.ng-dirty {
+}
+
+.ui-match { background: yellow; }

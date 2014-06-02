@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">Edit Contact</h3>
+</div>
+<div class="modal-body">
+    <form name="form">
+        <input placeholder="Name" name="name" ng-model="item.name" auto-focus required ng-minlength="1" ng-maxlength="255"/>
+        <input placeholder="Phone" name="phoneNumber" ng-model="item.phoneNumber" required ng-pattern="phonePattern" ng-minlength="1" ng-maxlength="255"/>
+        <br/>
+        <div ng-show="form.name.$dirty && form.name.$invalid">Invalid:
+            <span ng-show="form.name.$error.required">Name is required.</span>
+            <span ng-show="form.name.$error.minlength">Name is too short.</span>
+            <span ng-show="form.name.$error.maxlength">Name is too long.</span>
+        </div>
+        <div ng-show="form.phoneNumber.$dirty && form.phoneNumber.$invalid">Invalid:
+            <span ng-show="form.phoneNumber.$error.required">Phone is required.</span>
+            <span ng-show="form.name.$error.minlength">Phone is too short.</span>
+            <span ng-show="form.name.$error.maxlength">Phone is too long.</span>
+            <span ng-show="form.phoneNumber.$error.pattern">Phone is not valid.</span>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button ng-disabled="form.$invalid || isUnchanged(item)" class="btn btn-primary" ng-click="ok()">SAVE</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+

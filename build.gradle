@@ -1,0 +1,28 @@
+buildscript {
+    repositories { 
+    	mavenCentral() 
+    	maven { url "http://repo.spring.io/libs-snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.0.BUILD-SNAPSHOT")
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+repositories { 
+	mavenCentral() 
+	maven { url "http://repo.spring.io/libs-snapshot" }
+}
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.data:spring-data-rest-webmvc")
+    compile("com.google.guava:guava:17.0")
+
+    runtime("mysql:mysql-connector-java:5.1.26")
+    runtime("org.apache.derby:derby:10.10.2.0")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
