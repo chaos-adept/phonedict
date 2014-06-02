@@ -80,6 +80,7 @@ angular.module('phoneDictApp.controllers', [])
         };
 
         $scope.reLoadFirstPage = function () {
+            $scope.items = [];
             $scope.isLoadingPage = true;
 
             var successHandler = function (data) {

@@ -2,10 +2,13 @@
     <h3 class="modal-title">Edit Contact</h3>
 </div>
 <div class="modal-body">
-    <form name="form">
-        <input placeholder="Name" name="name" ng-model="item.name" auto-focus required ng-minlength="1" ng-maxlength="255"/>
-        <input placeholder="Phone" name="phoneNumber" ng-model="item.phoneNumber" required ng-pattern="phonePattern" ng-minlength="1" ng-maxlength="255"/>
+    <form name="form" >
+        <input class="form-control"  placeholder="Name" name="name" ng-model="item.name" auto-focus required ng-minlength="1"
+               ng-maxlength="255"/>
+        <input class="form-control"  placeholder="Phone" name="phoneNumber" ng-model="item.phoneNumber" required ng-pattern="phonePattern"
+               ng-minlength="1" ng-maxlength="255"/>
         <br/>
+
         <div ng-show="form.name.$dirty && form.name.$invalid">Invalid:
             <span ng-show="form.name.$error.required">Name is required.</span>
             <span ng-show="form.name.$error.minlength">Name is too short.</span>

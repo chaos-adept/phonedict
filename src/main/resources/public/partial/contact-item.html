@@ -1,7 +1,8 @@
 <div ng-mouseover="showEditCtrl=true" ng-mouseleave="showEditCtrl=false">
     <div ng-if="!editMode">
-       <span ng-bind-html="data.name | highlight:highlightText:false"></span> / {{data.phoneNumber}}
-
+        <h3>
+            <span ng-bind-html="data.name | highlight:highlightText:true"></span> <small> - {{data.phoneNumber}} </small>
+        </h3>
         <span ng-if="showEditCtrl" class="pull-right">
             <button class="btn btn-xs" ng-click="toEditState()"> <span class="glyphicon glyphicon-pencil"></span></button>
             <button class="btn btn-xs" ng-click="onRemove(data)"> <span class="glyphicon glyphicon-remove"></span></button>
